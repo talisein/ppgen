@@ -13,6 +13,7 @@
     <http://www.gnu.org/licenses/>. */
 
 #include <cstdlib>
+#include <cmath>
 #include <random>
 #include <iostream>
 #include <sstream>
@@ -32,6 +33,8 @@ int main(int, char**)
         std::cout << "Number of words must be a postive numeral (not \"" << num_words << "\").\n";
         return EXIT_FAILURE;
     }
+    std::cout << "\nOkay, " << num_words << " words will give you "
+              << std::log2(wordlist.size())*num_words << " bits of entropy.\n\n";
 
     std::random_device rd;
     std::mt19937_64 gen {rd()};
