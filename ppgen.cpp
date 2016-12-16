@@ -38,8 +38,8 @@ int main(int, char *[])
 
     std::stringstream passphrase;
     std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, wordlist.size());
+    std::mt19937_64 gen {rd()};
+    std::uniform_int_distribution<decltype(wordlist)::size_type> dis {0, wordlist.size()};
 
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
         for (int word = 0; word < num_words; ++word) {
