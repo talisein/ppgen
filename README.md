@@ -6,14 +6,6 @@ Requirements
 ------------
 C++14 compiler.
 
-Building
---------
-# make
-
-Running
--------
-# ./ppgen
-
 Description
 -----------
 
@@ -26,3 +18,12 @@ should choose one that will be understood over the phone.
 Using random characters for security questions is known to be bypassed
 by false actors simply saying "a bunch of random letters, it would be
 silly for me to say them all!"
+
+Building
+--------
+    # make
+
+Running
+-------
+    # ./ppgen
+
