@@ -42,10 +42,10 @@ int main(int, char *[])
     std::uniform_int_distribution<> dis(0, wordlist.size());
 
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
-        for (int i = 0; i < num_words; ++i) {
+        for (int word = 0; word < num_words; ++word) {
             passphrase << wordlist[dis(gen)] << " ";
         }
-        std::cout << passphrase.str() << std::endl;;
+        std::cout << passphrase.str() << std::endl;
         passphrase.str("");
     }
 
