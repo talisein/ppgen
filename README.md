@@ -24,7 +24,7 @@ A quick look through some of the many other generators shows they are
 not trivially inspectable. You want to trust the code of your
 passphrase generator! Even if you are not a skilled programmer, you
 can look at ppgen.cpp and see it is dead simple with no room for dirty
-tricks. Including the GPLv3 disclaimer, it is 53 lines. Even so you
+tricks. Including the GPLv3 disclaimer, it is 51 lines. Even so you
 can see:
 
 - It seeds the random number generator from your system's random

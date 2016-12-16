@@ -10,44 +10,41 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see
-    <http://www.gnu.org/licenses/>.
-*/
+    <http://www.gnu.org/licenses/>. */
 
+#include <cstdlib>
 #include <random>
 #include <iostream>
 #include <sstream>
 #include "wordlist.h"
 
-int main(int, char *[])
+int main(int, char**)
 {
     std::cout << "ppgen  Copyright © 2016 Andrew Potter\n"
               << "This program comes with ABSOLUTELY NO WARRANTY;\n"
               << "This is free software, and you are welcome to redistribute it\n"
               << "under certain conditions.\n\n";
 
-    int num_words;
-    do {
-        std::cout << "Number of words in passphrase: ";
-        std::cin >> num_words;
-        if (num_words <= 0) {
-            std::cout << "Number of words must be a postive numeral (not \"" << num_words << "\").\n";
-        }
-    } while (num_words <= 0);
+    int num_words = 0;
+    std::cout << "Number of words in passphrase: ";
+    std::cin >> num_words;
+    if (num_words <= 0) {
+        std::cout << "Number of words must be a postive numeral (not \"" << num_words << "\").\n";
+        return EXIT_FAILURE;
+    }
 
-    std::cout << "Choose from one of these 10 passphrases:\n\n";
-
-    std::stringstream passphrase;
     std::random_device rd;
     std::mt19937_64 gen {rd()};
     std::uniform_int_distribution<decltype(wordlist)::size_type> dis {0, wordlist.size()};
 
+    std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
+        std::stringstream passphrase;
         for (int word = 0; word < num_words; ++word) {
             passphrase << wordlist[dis(gen)] << " ";
         }
         std::cout << passphrase.str() << std::endl;
-        passphrase.str("");
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
