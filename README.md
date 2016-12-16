@@ -27,13 +27,13 @@ can look at ppgen.cpp and see it is dead simple with no room for dirty
 tricks. Including the GPLv3 disclaimer, it is 53 lines. Even so you
 can see:
 
-    * It seeds the random number generator from your system's random
-      device.
-    * It uses a uniform distribution.
-    * Its not python, so you can be confident from looking at the
-      headers & Makefile it is definitely not doing something sneaky
-      to talk to the internet.
-    * I've GPG-signed all commits.
+- It seeds the random number generator from your system's random
+  device.
+- It uses a uniform distribution.
+- Its not python, so you can be confident from looking at the
+  headers & Makefile it is definitely not doing something sneaky
+  to talk to the internet.
+- I've GPG-signed all commits.
 
 Building & Running
 --------
