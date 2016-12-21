@@ -38,7 +38,7 @@ int main(int, char**)
 
     std::random_device rd;
     std::mt19937_64 gen {rd()};
-    std::uniform_int_distribution<decltype(wordlist)::size_type> dis {0, wordlist.size()};
+    std::uniform_int_distribution<decltype(wordlist)::size_type> dis {0, wordlist.size() - 1};
 
     std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
