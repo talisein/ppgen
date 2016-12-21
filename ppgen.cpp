@@ -16,7 +16,6 @@
 #include <cmath>
 #include <random>
 #include <iostream>
-#include <sstream>
 #include "wordlist.h"
 
 int main(int, char**)
@@ -42,11 +41,10 @@ int main(int, char**)
 
     std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
-        std::stringstream passphrase;
         for (int word = 0; word < num_words; ++word) {
-            passphrase << wordlist[dis(gen)] << " ";
+            std::cout << wordlist[dis(gen)] << " ";
         }
-        std::cout << passphrase.str() << std::endl;
+        std::cout << std::endl;
     }
 
     return EXIT_SUCCESS;
