@@ -43,7 +43,7 @@ int main(int, char**)
     std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
         for (int word = 0; word < num_words; ++word) {
-            std::cout << wordlist[dis(rng)] << "\t";
+            std::cout << wordlist[dis(rng)] << " ";
         }
         std::cout << std::endl;
     }
