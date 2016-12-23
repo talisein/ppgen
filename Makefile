@@ -8,5 +8,5 @@ clean:
 ppgen: ppgen.o
 	$(CXX) ppgen.o -o ppgen
 
-ppgen.o: ppgen.cpp wordlist.h
+ppgen.o: ppgen.cpp wordlist.h pcg_random.hpp pcg_extras.hpp pcg_uint128.hpp
 	$(CXX) $(CXXFLAGS) -c ppgen.cpp -o ppgen.o

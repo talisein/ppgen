@@ -14,8 +14,9 @@
 
 #include <cstdlib>
 #include <cmath>
-#include <random>
 #include <iostream>
+#include <random>
+#include "pcg_random.hpp"
 #include "wordlist.h"
 
 int main(int, char**)
@@ -35,14 +36,14 @@ int main(int, char**)
     std::cout << "\nOkay, " << num_words << " words will give you "
               << std::log2(wordlist.size())*num_words << " bits of entropy.\n\n";
 
-    std::random_device rd;
-    std::mt19937_64 gen {rd()};
+    pcg_extras::seed_seq_from<std::random_device> seed_source;
+    pcg64 rng(seed_source);
     std::uniform_int_distribution<decltype(wordlist)::size_type> dis {0, wordlist.size() - 1};
 
     std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
         for (int word = 0; word < num_words; ++word) {
-            std::cout << wordlist[dis(gen)] << " ";
+            std::cout << wordlist[dis(rng)] << "\t";
         }
         std::cout << std::endl;
     }

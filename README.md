@@ -8,15 +8,13 @@ C++14 compiler, acceptance of GPLv3+.
 
 Description
 -----------
-This simple command line program utilizes the [Diceware](http://world.std.com/~reinhold/diceware.html) wordlist to
-generate a passphrase with the number of words you desire. I use it to
-generate answers to security questions (I use actual dice to generate
-my passwords). The program generates 10 different random phrases, you
-should choose one that will be understood over the phone.
 
-Using random characters for security questions is known to be bypassed
-by false actors simply saying "a bunch of random letters, it would be
-silly for me to say them all!"
+This simple command line program utilizes the
+[Diceware](http://world.std.com/~reinhold/diceware.html) wordlist to
+generate a passphrase with the number of words you desire. I use it to
+generate answers to security questions. The program generates 10
+different random phrases, you should choose one that will be
+understood over the phone.
 
 Why use THIS one?
 -----------------
@@ -35,8 +33,36 @@ plainly see:
   to talk to the internet.
 - I've GPG-signed all commits.
 
+Thanks to
+---------
+This program uses the [PCG-Random](http://www.pcg-random.org/) C++
+library. While I am normally partial to pure STL implementations,
+@imneme makes a compelling case that the C++14 RNG toolkit just has
+too many shortcomings.
+
 Building & Running
---------
+------------------
     # make
     # ./ppgen
+    ppgen  Copyright © 2016 Andrew Potter
+    This program comes with ABSOLUTELY NO WARRANTY;
+    This is free software, and you are welcome to redistribute it
+    under certain conditions.
+
+    Number of words in passphrase: 10
+
+    Okay, 10 words will give you 129.248 bits of entropy.
+
+    Choose from one of these 10 passphrases:
+
+    19 randy chris bade judo kind atomic bit wm lilt
+    back yo blanc cede melee seth wafer raj van agile
+    punt hobby ghi till virus tori rm pewee issue 67
+    saga vj vf stout ogden row snake silly fs plant
+    botch dice gog dais manor van xx livre gwen feet
+    eta papaw citrus dill manor kane cody blare hoyt tithe
+    waggle ail saxon daly orbit hippy flask zone indy eater
+    yz goat taut mario blithe brady bragg lust bunny thyme
+    arc nook karl ampex 1000 snark tap agent cooky sheet
+    ebb bern tabula prow edgy 4321 day stork xw 1925
 
