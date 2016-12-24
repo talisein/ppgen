@@ -35,14 +35,22 @@ plainly see:
 
 Thanks to
 ---------
-This program uses the [PCG-Random](http://www.pcg-random.org/) C++
-library. While I am normally partial to pure STL implementations,
-@imneme makes a compelling case that the C++14 RNG toolkit just has
-too many shortcomings.
+The wordlist comes from
+[Diceware](http://world.std.com/~reinhold/diceware.html), by Arnold
+Reinhold ([@agreinhold](https://github.com/agreinhold)). He has
+provided the wordlist under the Creative Commons CC-BY 3.0 license.
+
+The random number generator used is the
+[PCG-Random](http://www.pcg-random.org/) C++ library, by Melissa
+O'Neill ([@imneme](https://github.com/imneme)). While I am normally
+partial to pure STL implementations, Prof. O'Neill makes a compelling
+case that the C++14 RNG toolkit has too many shortcomings. This
+library is available under the Apache 2.0 license.
 
 Building & Running
 ------------------
     # make
+    # sudo make install # (Optional)
     # ./ppgen
     ppgen  Copyright © 2016 Andrew Potter
     This program comes with ABSOLUTELY NO WARRANTY;
