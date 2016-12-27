@@ -24,5 +24,5 @@ uninstall:
 ppgen: ppgen.o
 	$(CXX) $(LDFLAGS) ppgen.o -o ppgen
 
-ppgen.o: ppgen.cpp wordlist.h pcg_random.hpp pcg_extras.hpp pcg_uint128.hpp
+ppgen.o: ppgen.cpp diceware_wordlist.h eff_wordlist.h pcg_random.hpp pcg_extras.hpp pcg_uint128.hpp
 	$(CXX) $(CPPFLAGS) $(OPTFLAGS) $(CXXFLAGS) -c ppgen.cpp -o ppgen.o

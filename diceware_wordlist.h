@@ -26,7 +26,7 @@
 #include <array>
 
 namespace {
-    static constexpr std::array<const char*,7776> wordlist = {
+    static constexpr std::array<const char*,7776> diceware_wordlist = {
       "a", "a&p", "a's", "aa", "aaa",
       "aaaa", "aaron", "ab", "aba", "ababa",
       "aback", "abase", "abash", "abate", "abbas",
