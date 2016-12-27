@@ -35,8 +35,9 @@ plainly see:
 Thanks to
 ---------
 The default wordlist was created by the [Electronic Frontier
-Foundation](https://www.eff.org), provided under the Creative Commons
-CC-BY 3.0 license. You can read their design criteria
+Foundation](https://www.eff.org)
+([@EFForg](https://github.com/EFForg)), provided under the Creative
+Commons CC-BY 3.0 license. You can read their design criteria
 [here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
 The alternative wordlist comes from the classic
