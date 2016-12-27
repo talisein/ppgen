@@ -25,6 +25,7 @@ install: ppgen
 
 uninstall:
 	$(RM) $(DESTDIR)$(bindir)/ppgen
+	$(RM) $(DESTDIR)$(man1dir)/ppgen.1
 
 ppgen: ppgen.o
 	$(CXX) $(LDFLAGS) ppgen.o -o ppgen
