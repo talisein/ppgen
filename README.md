@@ -38,7 +38,9 @@ The default wordlist was created by the [Electronic Frontier
 Foundation](https://www.eff.org)
 ([@EFForg](https://github.com/EFForg)), provided under the Creative
 Commons CC-BY 3.0 license. You can read their design criteria
-[here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+[here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases),
+and you can read about how to use physical dice to generate your
+passphrases [here](https://www.eff.org/dice).
 
 The alternative wordlist comes from the classic
 [Diceware](http://world.std.com/~reinhold/diceware.html), by Arnold
