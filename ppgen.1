@@ -1,0 +1,36 @@
+.\"Copyright (c) 2016 Andrew Potter
+.\"
+.\"Copying and distribution of this file, with or without modification,
+.\"are permitted in any medium without royalty provided the copyright
+.\"notice and this notice are preserved.  This file is offered as-is,
+.\"without any warranty.
+
+.TH PPGEN 1
+.SH NAME
+ppgen \- generate random passphrases
+.SH SYNOPSIS
+.B ppgen
+[\fB\-n\fR \fINUM\fR]
+[\fB\-\-diceware\fR]
+.SH DESCRIPTION
+.B ppgen
+Prints ten randomly generated passphrases.
+.SH OPTIONS
+.TP
+.BR \-n " " \fINUM\fR
+Set the number of words in the passphrase to NUM.
+Default is six words.
+.TP
+.BR \-\-diceware
+Use the classic Diceware wordlist by Arnold Reinhold instead of the
+Electronic Frontier Foundation's wordlist.
+.SH AUTHOR
+Written by Andrew Potter.
+.SH REPORTING BUGS
+Report bugs on github: <https://github.com/talisein/ppgen/issues>
+.SH COPYRIGHT
+Copyright \(co 2016 Andrew Potter
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

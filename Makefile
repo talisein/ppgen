@@ -1,9 +1,13 @@
 SHELL=/bin/sh
 INSTALL?=/usr/bin/install
 INSTALL_PROGRAM?=$(INSTALL)
+INSTALL_DATA?=${INSTALL} -m 644
 prefix?=/usr/local
 exec_prefix?=$(prefix)
+datarootdir=$(prefix)/share
 bindir?=$(exec_prefix)/bin
+mandir?=$(datarootdir)/man
+man1dir?=$(mandir)/man1
 
 OPTFLAGS?=-Os
 CXXFLAGS?=-Wall -Wextra -pedantic -Werror -std=c++14
@@ -17,6 +21,7 @@ clean:
 
 install: ppgen
 	$(INSTALL_PROGRAM) ppgen $(DESTDIR)$(bindir)
+	$(INSTALL_DATA) ppgen.1 $(DESTDIR)$(man1dir)
 
 uninstall:
 	$(RM) $(DESTDIR)$(bindir)/ppgen
