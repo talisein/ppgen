@@ -23,10 +23,10 @@
  * https://creativecommons.org/licenses/by/3.0/legalcode
  */
 
-#include <array>
+#include <vector>
 
 namespace {
-    static constexpr std::array<const char*,7776> diceware_wordlist = {
+    static const std::vector<const char*> diceware_wordlist = {
       "a", "a&p", "a's", "aa", "aaa",
       "aaaa", "aaron", "ab", "aba", "ababa",
       "aback", "abase", "abash", "abate", "abbas",

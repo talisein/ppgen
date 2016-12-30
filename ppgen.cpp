@@ -19,20 +19,20 @@
 #include "pcg_random.hpp"
 #include "diceware_wordlist.h"
 #include "eff_wordlist.h"
+#include "eff_short_wordlist.h"
 
 int main(int argc, char** arg_begin)
 {
-    /* Parse arguments. --diceware to use diceware wordlist, -n 10 to get 10 word passphrases */
     using namespace std::string_literals;
     char **arg_end = arg_begin + argc;
     bool use_diceware = std::find(arg_begin, arg_end, "--diceware"s) != arg_end;
-    long num_words = 6;
+    bool use_short = std::find(arg_begin, arg_end, "--short"s) != arg_end;
+    using wordlist_t = const std::vector<const char *>;
+    const wordlist_t& wordlist = use_short ? eff_short_wordlist : use_diceware ? diceware_wordlist : eff_wordlist;
+    long num_words = use_short ? 8 : 6;
     auto num_words_arg = std::find(arg_begin, arg_end, "-n"s);
     if (num_words_arg != arg_end && num_words_arg + 1 != arg_end)
         num_words = strtol(num_words_arg[1], NULL, 0);
-
-    using wordlist_t = std::array<const char *, 7776>;
-    const wordlist_t& wordlist = use_diceware ? diceware_wordlist : eff_wordlist;
 
     std::cout << "ppgen  Copyright © 2016 Andrew Potter\n"
               << "This program comes with ABSOLUTELY NO WARRANTY;\n"

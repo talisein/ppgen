@@ -24,10 +24,10 @@
  * https://creativecommons.org/licenses/by/3.0/legalcode
  */
 
-#include <array>
+#include <vector>
 
 namespace {
-    constexpr std::array<const char *, 7776> eff_wordlist = {
+    static const std::vector<const char *> eff_wordlist = {
         "abacus", "abdomen", "abdominal", "abide", "abiding", "ability",
         "ablaze", "able", "abnormal", "abrasion", "abrasive", "abreast",
         "abridge", "abroad", "abruptly", "absence", "absentee", "absently",

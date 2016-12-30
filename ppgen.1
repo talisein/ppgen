@@ -12,6 +12,7 @@ ppgen \- generate random passphrases
 .B ppgen
 [\fB\-n\fR \fINUM\fR]
 [\fB\-\-diceware\fR]
+[\fB\-\-short\fR]
 .SH DESCRIPTION
 .B ppgen
 Prints ten randomly generated passphrases.
@@ -19,11 +20,16 @@ Prints ten randomly generated passphrases.
 .TP
 .BR \-n " " \fINUM\fR
 Set the number of words in the passphrase to NUM.
-Default is six words.
+Default is six words, eight if --short.
 .TP
 .BR \-\-diceware
 Use the classic Diceware wordlist by Arnold Reinhold instead of the
-Electronic Frontier Foundation's wordlist.
+Electronic Frontier Foundation's wordlist. Ignored if --short is passed.
+.TP
+.BR \-\-short
+Use the EFF's short wordlist; these words are shorter in average
+length but you should use more words to match the security of the
+other word lists.
 .SH AUTHOR
 Written by Andrew Potter.
 .SH REPORTING BUGS
