@@ -14,21 +14,21 @@ CXXFLAGS?=-Wall -Wextra -pedantic -Werror -std=c++14
 
 .PHONY: all clean install uninstall
 
-all: ppgen ppgen.o
+all: bin/ppgen
 
 clean:
-	$(RM) ppgen ppgen.o
+	$(RM) bin/ppgen
 
-install: ppgen
-	$(INSTALL_PROGRAM) ppgen $(DESTDIR)$(bindir)
-	$(INSTALL_DATA) ppgen.1 $(DESTDIR)$(man1dir)
+install: bin/ppgen
+	$(INSTALL_PROGRAM) bin/ppgen $(DESTDIR)$(bindir)
+	$(INSTALL_DATA) man/ppgen.1 $(DESTDIR)$(man1dir)
 
 uninstall:
 	$(RM) $(DESTDIR)$(bindir)/ppgen
 	$(RM) $(DESTDIR)$(man1dir)/ppgen.1
 
-ppgen: ppgen.o
-	$(CXX) $(LDFLAGS) ppgen.o -o ppgen
+bin:
+	mkdir -p $@
 
-ppgen.o: ppgen.cpp diceware_wordlist.h eff_wordlist.h pcg_random.hpp pcg_extras.hpp pcg_uint128.hpp
-	$(CXX) $(CPPFLAGS) $(OPTFLAGS) $(CXXFLAGS) -c ppgen.cpp -o ppgen.o
+bin/ppgen: src/ppgen.cpp src/diceware_wordlist.h src/eff_wordlist.h src/eff_short_wordlist.h src/pcg_random.hpp src/pcg_extras.hpp src/pcg_uint128.hpp | bin
+	$(CXX) $(CPPFLAGS) $(OPTFLAGS) $(CXXFLAGS) src/ppgen.cpp -o bin/ppgen
