@@ -6,6 +6,8 @@ Requirements
 ------------
 C++14 compiler, acceptance of GPLv3+.
 
+Uses [meson](http://mesonbuild.com/) and [ninja](https://ninja-build.org/) to build. 
+
 Description
 -----------
 
@@ -27,10 +29,14 @@ plainly see:
 - It seeds the random number generator from your system's random
   device.
 - It uses a uniform distribution.
-- Its not python, so you can be confident from looking at the
-  headers & Makefile it is definitely not doing something sneaky
-  to talk to the internet.
 - I've GPG-signed all commits.
+
+The only complexity caveat here is the use of the PCG-Random
+library. The PCG whitepaper convinces me that the C++14 standard
+library has too many shortcomings. This means that meson will download
+the PCG-Random library from github, and a meson wrap file from my
+dropbox. This is a tough compromise for a tool that is supposed to be
+easy to audit. My apologies.
 
 Thanks to
 ---------
@@ -56,8 +62,11 @@ library is available under the Apache 2.0 license.
 
 Building & Running
 ------------------
-    # make
-    # sudo make install # (Optional)
+    # mkdir build
+    # cd build
+    # meson ..
+    # ninja
+    # sudo ninja install # (Optional)
     # ./ppgen
     ppgen  Copyright © 2016 Andrew Potter
     This program comes with ABSOLUTELY NO WARRANTY;

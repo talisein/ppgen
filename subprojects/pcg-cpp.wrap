@@ -1,0 +1,11 @@
+[wrap-file]
+directory = pcg-cpp-0.98.1
+
+source_url = https://github.com/imneme/pcg-cpp/archive/v0.98.1.tar.gz
+source_filename = v0.98.1.tar.gz
+source_hash = 25bb22f076e8c346fa28c2267ae3564b12122f1f4ab2d2a08ad8909dcd6319fd
+
+patch_url = https://www.dropbox.com/s/h6hns7lfeam2q0i/pcg-cpp-0.98.1-wrap.tar.gz?dl=1
+patch_filename = pcg-cpp-0.98.1-wrap.tar.gz
+patch_hash = f3ba616d1c9c2b4fced99f67963220bb9b86f449faec66a6f2db362c1542567d
+
