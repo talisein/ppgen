@@ -1,0 +1,36 @@
+.\"Copyright (c) 2017 Andrew Potter
+.\"
+.\"Copying and distribution of this file, with or without modification,
+.\"are permitted in any medium without royalty provided the copyright
+.\"notice and this notice are preserved.  This file is offered as-is,
+.\"without any warranty.
+
+.TH PINGEN 1
+.SH NAME
+pingen \- generate PINs
+.SH SYNOPSIS
+.B pingen
+[\fB\-n\fR \fINUM\fR]
+[\fB\-\-no-repeats\fR]
+.SH DESCRIPTION
+.B pingen
+Prints a randomly generated PIN.
+.SH OPTIONS
+.TP
+.BR \-n " " \fINUM\fR
+Set the number of digits in the PIN to NUM.
+Default is four digits.
+.TP
+.BR \-\-no-repeats
+Prevents generation of a PIN with repeating digits, as some systems
+require. For example, 1233 would not be generated, but 1232 could be.
+.SH AUTHOR
+Written by Andrew Potter.
+.SH REPORTING BUGS
+Report bugs on github: <https://github.com/talisein/ppgen/issues>
+.SH COPYRIGHT
+Copyright \(co 2017 Andrew Potter
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
