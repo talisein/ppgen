@@ -16,6 +16,7 @@
 #include <cmath>
 #include <iostream>
 #include <random>
+#include <experimental/iterator>
 #include "pcg_random.hpp"
 #include "diceware_wordlist.h"
 #include "eff_wordlist.h"
@@ -53,8 +54,9 @@ int main(int argc, char** arg_begin)
 
     std::cout << "Choose from one of these 10 passphrases:\n\n";
     for (int gen_num = 0; gen_num < 10; ++gen_num) {
+        auto out = std::experimental::make_ostream_joiner(std::cout, " ");
         for (long word = 0; word < num_words; ++word) {
-            std::cout << wordlist[dis(rng)] << " ";
+            out = wordlist[dis(rng)];
         }
         std::cout << std::endl;
     }
