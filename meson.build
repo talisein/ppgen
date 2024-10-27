@@ -1,5 +1,6 @@
+
 project('ppgen', ['cpp'],
-	    version: '1.2',
+	    version: '1.3.0',
 	    license: 'GPL3+',
         default_options : ['cpp_std=c++14',
 			               'buildtype=release'])
@@ -8,8 +9,12 @@ if not meson.get_compiler('cpp').has_header_symbol('experimental/iterator', '__c
   error('C++ ostream_joiner not available. Use release 1.1')
 endif
 
-pcg_cpp_sp = subproject('pcg-cpp')
-pcg_cpp_dep = pcg_cpp_sp.get_variable('pcg_cpp_dep')
+
+if not meson.get_compiler('cpp').has_header('pcg_random.hpp')
+  pcg_cpp_dep = dependency('pcg-cpp', fallback: ['pcg-cpp'], method: 'cmake')
+else
+  pcg_cpp_dep = dependency('', required: false)
+endif
 
 ppgen = executable('ppgen', 'src/ppgen.cpp',
 		           dependencies: pcg_cpp_dep,

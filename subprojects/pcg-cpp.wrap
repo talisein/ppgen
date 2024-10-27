@@ -8,3 +8,6 @@ patch_url = https://wrapdb.mesonbuild.com/v1/projects/pcg/0.98.1/1/get_zip
 patch_filename = pcg-0.98.1-1-wrap.zip
 patch_hash = 99206a1e4e54b2f12b6177fa22d453dcdc612f67bc5d89760051c8bed509f783
 
+[provide]
+pcg-cpp = pcg_cpp_dep
+
